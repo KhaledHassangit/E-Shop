@@ -38,6 +38,7 @@ const ProductsByCategory = lazy(() => import('./Pages/Products/ProductsByCategor
 const ProductsByBrand = lazy(() => import('./Pages/Products/ProductsByBrand'));
 
 function App() {
+  
   const [isUser, isAdmin] = ProtectedRoutesHook();
 
   return (

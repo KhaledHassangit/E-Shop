@@ -52,7 +52,6 @@ const AllProductsHook = () => {
     const onPress = async (pageN) =>{
             getStorage()
             SortingData()
-        
             await dispatch(getAllProductsSearch(`sort=${sort}limit=${8}
             &page=${pageN}&keyword=${word}&${CategoryQueryString}&${BrandQueryString}
             ?${pricefromString}${priceToString}`))
