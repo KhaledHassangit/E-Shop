@@ -1,12 +1,6 @@
-        {
-                "version": 2,
-                "builds": [
-                { "src": "package.json", "use": "@vercel/node" }
-                ],
-                "rewrites": [
-                { "source": "/(.*)", "destination": "/" }
-                ],
-                "engines": {
-                "node": "18.x"
-                }
-        }
+
+{
+        "rewrites": [
+        { "source": "/(.*)", "destination": "/" }
+        ]
+}
