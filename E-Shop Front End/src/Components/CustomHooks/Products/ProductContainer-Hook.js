@@ -21,16 +21,17 @@ const ProductContainerHook = () => {
     }, [])
 
     const userwishlist = useSelector(state => state.WishListReducer.userwishlist)
-
     useEffect(() => {
-        if(loadingWish === false){
-            if(userwishlist.data >= 1){
-                console.log(userwishlist.data)
-                setfavproduct(userwishlist.data.map(item => item._id))
-            } else setfavproduct([])
+        if (!loadingWish) {
+            if (userwishlist && Array.isArray(userwishlist.data) && userwishlist.data.length >= 1) {
+                console.log(userwishlist.data);
+                setfavproduct(userwishlist.data.map(item => item._id));
+            } else {
+                setfavproduct([]);
+            }
         }
-
-    }, [loadingWish])
+    }, [loadingWish, userwishlist]);
+    
     
     return [favproduct]
 }
